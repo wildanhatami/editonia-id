@@ -1,0 +1,94 @@
+.background-elements {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  /* Use a lighter pink/purple base like the reference image */
+  background: radial-gradient(circle at 50% 50%, #fba6e1 0%, #d946ef 40%, #7028e4 80%, #093478 100%);
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.shape-3d {
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* 3D Sphere Style */
+.sphere {
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff 0%, #fba6e1 15%, #c026d3 50%, #7028e4 80%, #2c095c 100%);
+}
+
+.sphere-1 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: 20%;
+  /* Shift hue slightly to blue */
+  background: radial-gradient(circle at 30% 30%, #fff 0%, #a5b4fc 15%, #6366f1 50%, #4338ca 80%, #1e1b4b 100%);
+}
+
+.sphere-2 {
+  width: 150px;
+  height: 150px;
+  top: 15%;
+  right: 25%;
+}
+
+/* 3D Block Style */
+.block {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #fba6e1 0%, #d946ef 50%, #7028e4 100%);
+  border-radius: 15px;
+  transform: rotate(20deg) skew(10deg, 10deg);
+  /* Simulate 3D bevel/depth */
+  box-shadow: inset 10px 10px 30px rgba(255,255,255,0.7), inset -10px -10px 30px rgba(0,0,0,0.5), 20px 20px 40px rgba(0,0,0,0.4);
+}
+
+.block-1 {
+  top: 25%;
+  left: 15%;
+}
+
+/* 3D Bar Style */
+.bar {
+  width: 120px;
+  height: 400px;
+  background: linear-gradient(90deg, #93c5fd 0%, #3b82f6 50%, #1d4ed8 100%);
+  border-radius: 20px;
+  transform: rotate(-15deg);
+  box-shadow: inset 15px 0 30px rgba(255,255,255,0.6), inset -15px 0 30px rgba(0,0,0,0.6), 15px 15px 30px rgba(0,0,0,0.4);
+}
+
+.bar-1 {
+  bottom: -50px;
+  right: 10%;
+}
+
+/* Central glowing light */
+.central-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  z-index: 1;
+}
+
+/* Ensure mobile layout doesn't break */
+@media (max-width: 768px) {
+  .sphere-1 { width: 250px; height: 250px; left: 10%; }
+  .block-1 { width: 150px; height: 150px; left: 5%; }
+  .bar-1 { height: 250px; right: 5%; }
+}

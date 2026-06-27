@@ -1,0 +1,117 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  text-align: center;
+  position: relative;
+  margin-top: 50px;
+}
+
+.hero-content {
+  position: relative;
+}
+
+.stars-decor {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.star {
+  font-size: 1.5rem;
+  animation: twinkle 2s infinite alternate;
+}
+
+.star-1 {
+  transform: translateX(-50px);
+}
+
+.star-2 {
+  transform: translateX(50px);
+  animation-delay: 1s;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+.main-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.text-purple {
+  color: var(--neon-purple);
+  -webkit-text-stroke: 1px white;
+  text-shadow: 0 0 10px var(--neon-purple), 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+.text-pink {
+  color: #fff;
+  -webkit-text-stroke: 1px white;
+  text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 30px #fff;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: #ddd;
+}
+
+.quest-btn {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.quest-btn:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+.btn-content {
+  position: relative;
+  z-index: 2;
+  letter-spacing: 2px;
+}
+
+.mana-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--neon-purple), var(--neon-pink));
+  z-index: 1;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    margin-top: 30px;
+  }
+  .main-title {
+    font-size: 2.8rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+  .quest-btn {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+  }
+}

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --bg-color-top: #2c095c;
+  --bg-color-mid: #99238c;
+  --bg-color-bottom: #093478;
+
+  --neon-cyan: #22d3ee;
+  --neon-pink: #d946ef;
+  --neon-purple: #a855f7;
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(255, 255, 255, 0.5);
+
+  --font-pixel: 'VT323', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none; /* We will use a custom cursor */
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-color-top); /* Fallback color */
+  color: white;
+  font-family: var(--font-pixel);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass:hover {
+  border-color: var(--glass-border-hover);
+}
+
+/* Pixel Border Utility */
+.pixel-border {
+  /* Simple pixel border using box shadow or solid border */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  image-rendering: pixelated;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #11052C;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon-purple);
+  border-radius: 0; /* Keep it pixelated */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-pink);
+}
+
+@media (pointer: coarse), (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+}
