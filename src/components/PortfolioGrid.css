@@ -104,12 +104,8 @@
 .modal-content {
   width: 100%;
   max-width: 800px;
-  background: rgba(20, 5, 40, 0.9);
-  border: 2px solid var(--neon-cyan);
-  border-radius: 12px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 30px rgba(34, 211, 238, 0.4);
   display: flex;
   flex-direction: column;
 }

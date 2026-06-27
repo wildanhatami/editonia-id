@@ -49,17 +49,20 @@ button {
   background: none;
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism utility - Updated to match HeroStats aesthetic */
 .glass {
-  background: var(--glass-bg);
+  background: rgba(20, 5, 40, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 2px solid var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(34, 211, 238, 0.1);
+  transition: all 0.3s ease;
 }
 
 .glass:hover {
-  border-color: var(--glass-border-hover);
+  border-color: rgba(34, 211, 238, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(34, 211, 238, 0.2);
 }
 
 /* Pixel Border Utility */

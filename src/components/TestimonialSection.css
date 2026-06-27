@@ -23,13 +23,9 @@
   flex: 1 1 300px;
   max-width: 350px;
   padding: 30px;
-  background: rgba(20, 5, 40, 0.6);
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  border-radius: 12px;
   text-align: left;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .testimonial-card:hover {

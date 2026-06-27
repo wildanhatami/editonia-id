@@ -19,15 +19,12 @@
 }
 
 .skill-card {
-  background: rgba(20, 5, 40, 0.7);
-  border: 2px solid rgba(168, 85, 247, 0.4);
-  border-radius: 8px;
   padding: 25px;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 5px 15px rgba(0, 0, 0, 0.5);
+
   transition: all 0.3s;
   cursor: default;
 }
