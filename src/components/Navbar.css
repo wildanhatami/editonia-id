@@ -163,6 +163,10 @@
     width: 50px;
   }
 
+  .nav-links {
+    display: none; /* Crucial: hide text links on mobile */
+  }
+
   .nav-actions {
     margin-left: auto; /* Push music button to the right */
     gap: 10px;
