@@ -143,49 +143,73 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    padding: 15px;
-    gap: 15px;
-    margin-top: 0;
+    flex-direction: row;
+    padding: 10px 15px;
+    margin-top: 5px;
+    gap: 10px;
+    background: rgba(10, 2, 20, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    position: sticky;
+    top: 5px;
+    z-index: 1000;
   }
 
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .nav-link-title {
-    font-size: 1.1rem;
-  }
-
-  .nav-link-sub {
-    font-size: 0.7rem;
-  }
-
-  .wizard-profile {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 5px;
-  }
-
-  .cat-icon-container {
-    width: 50px;
-    height: 50px;
-  }
-
-  .user-icon-img {
-    width: 50px;
-    height: 50px;
+  .logo-text {
+    display: none; /* Hide logo text on very small screens to save space */
   }
 
   .crystal-logo-img {
-    width: 60px;
+    width: 50px;
+  }
+
+  .nav-actions {
+    margin-left: auto; /* Push music button to the right */
+    gap: 10px;
+  }
+
+  .music-toggle-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .wizard-profile {
+    padding: 2px;
+    border-width: 1px;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .cat-icon-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .user-icon-img {
+    width: 45px;
+    height: 45px;
   }
 
   .wizard-label {
-    display: none;
+    display: none; /* Hide the wizard text */
+  }
+
+  .achievement-text h4 {
+    font-size: 0.9rem;
+  }
+
+  .achievement-text p {
+    font-size: 0.7rem;
+  }
+
+  .achievement-icon {
+    font-size: 1.8rem;
+  }
+
+  .achievement-banner {
+    width: 95vw;
+    padding: 10px;
+    top: 80px; /* Push below the sticky navbar */
   }
 }
 

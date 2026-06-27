@@ -105,7 +105,7 @@ const Navbar = () => {
       </div>
 
       <div 
-        className="user-profile"
+        className="wizard-profile"
         onMouseEnter={() => setIsHoveringCat(true)}
         onMouseLeave={() => setIsHoveringCat(false)}
         onClick={handleProfileClick}
