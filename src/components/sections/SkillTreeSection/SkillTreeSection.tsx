@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { playClickSound } from '../../../utils/audio';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import './SkillTreeSection.css';
 
 const skills = [
@@ -38,10 +39,12 @@ const skills = [
 ];
 
 const SkillTreeSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="skilltree-section">
-      <h2 className="section-title">Arcane Arsenal</h2>
-      <p className="section-subtitle">The software spells in my inventory</p>
+      <h2 className="section-title glitched">{t('skills_title')}</h2>
+      <p className="section-subtitle">{t('skills_subtitle')}</p>
       
       <div className="skill-grid">
         {skills.map((skill, index) => (
@@ -60,7 +63,18 @@ const SkillTreeSection = () => {
             </div>
             
             <div className="skill-rarity" style={{ color: skill.rarityColor, border: `1px solid ${skill.rarityColor}` }}>
-              {skill.rarity}
+              <span className="skill-level">{t('skill_level_max')}</span>
+            </div>
+            <div className="skill-stats">
+              <div className="stat-row">
+                <span className="stat-name">Rarity:</span>
+                <span className={`stat-value rarity-${skill.rarity.toLowerCase()}`}>
+                  {skill.rarity === 'EPIC' ? t('skill_rarity_epic') : 
+                   skill.rarity === 'LEGENDARY' ? t('skill_rarity_legendary') : 
+                   skill.rarity === 'RARE' ? t('skill_rarity_rare') : 
+                   t('skill_rarity_uncommon')}
+                </span>
+              </div>
             </div>
 
             <div className="exp-bar-container">

@@ -29,14 +29,25 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--bg-color-top); /* Fallback color */
+  background-color: var(--bg-color-top);
+  background-image: linear-gradient(rgba(20, 5, 40, 0.8), rgba(20, 5, 40, 0.9)), url('./assets/bg-forest-castle-8bit.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
   color: white;
   font-family: var(--font-pixel);
   overflow-x: hidden;
   line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -79,15 +90,17 @@ button {
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #11052C;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--neon-purple);
-  border-radius: 0; /* Keep it pixelated */
+  border-radius: 0;
+  /* Keep it pixelated */
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--neon-pink);
 }
-
-

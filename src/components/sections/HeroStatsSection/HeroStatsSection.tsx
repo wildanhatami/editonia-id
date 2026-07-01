@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import './HeroStatsSection.css';
 
 const AnimatedCounter = ({ value, label, prefix = '', suffix = '' }: { value: number, label: string, prefix?: string, suffix?: string }) => {
@@ -19,7 +20,6 @@ const AnimatedCounter = ({ value, label, prefix = '', suffix = '' }: { value: nu
     }
   }, [isInView, value, motionValue]);
 
-  // Using a separate state to render the changing number
   const displayRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -43,6 +43,8 @@ const AnimatedCounter = ({ value, label, prefix = '', suffix = '' }: { value: nu
 };
 
 const HeroStatsSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="hero-stats-section">
       <motion.div 
@@ -52,11 +54,13 @@ const HeroStatsSection = () => {
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8 }}
       >
-        <AnimatedCounter value={150} suffix="+" label="Quests Completed" />
+        <AnimatedCounter value={542} suffix="+" label={t('stat_quests')} />
         <div className="stat-divider" />
-        <AnimatedCounter value={5000} suffix="+" label="Hours in the Forge" />
+        <AnimatedCounter value={9000} suffix="+" label={t('stat_spells')} />
         <div className="stat-divider" />
-        <AnimatedCounter value={45} suffix="+" label="Guilds Satisfied" />
+        <AnimatedCounter value={120} label={t('stat_guild')} />
+        <div className="stat-divider" />
+        <AnimatedCounter value={100} suffix="%" label={t('stat_mana')} />
       </motion.div>
     </section>
   );

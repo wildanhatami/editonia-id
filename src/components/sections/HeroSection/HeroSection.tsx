@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import './HeroSection.css';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   const [isCharging, setIsCharging] = useState(false);
 
   const playClickSound = () => {
@@ -25,14 +27,18 @@ const HeroSection = () => {
           <span className="star star-1">✨</span>
           <span className="star star-2">✨</span>
         </div>
-        <h1 className="main-title">
-          <span className="text-purple">Wielding Video Magic</span>
-          <br />
-          <span className="text-pink">for Your Realm</span>
+        <h1 className="hero-title pixel-text glitched">
+          {t('hero_title')}
         </h1>
-        <p className="subtitle">
-          Professional Video Editing with an Isekai Twist.
+        <p className="hero-subtitle">
+          {t('hero_subtitle')}
         </p>
+
+        <div className="hero-buttons">
+          <a href="#quests" className="btn-primary">
+            {t('hero_btn_start')}
+          </a>
+        </div>
 
         <motion.a 
           href="https://wa.me/6289650866388"

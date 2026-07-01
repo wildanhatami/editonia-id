@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { playClickSound } from '../../../utils/audio';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import './ContactSection.css';
 
 const ContactSection = () => {
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
@@ -35,18 +37,18 @@ const ContactSection = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="quest-board-header">
-          <h2>Post a Quest</h2>
-          <p>Seek the wizard's aid for your video editing needs.</p>
+          <h2>{t('contact_title')}</h2>
+          <p>{t('contact_sub')}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="quest-form">
           <div className="form-group">
-            <label htmlFor="name">Adventurer Name</label>
+            <label htmlFor="name">{t('contact_name')}</label>
             <input 
               type="text" 
               id="name" 
               name="name" 
-              placeholder="E.g., Kirito" 
+              placeholder={t('contact_name_ph')} 
               value={formData.name} 
               onChange={handleChange} 
               required 
@@ -54,7 +56,7 @@ const ContactSection = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="contact">Contact Scroll (Email/Discord)</label>
+            <label htmlFor="contact">{t('contact_contact')}</label>
             <input 
               type="text" 
               id="contact" 
@@ -68,27 +70,27 @@ const ContactSection = () => {
 
           <div className="form-row">
             <div className="form-group">
-              <label htmlFor="questClass">Quest Class</label>
+              <label htmlFor="questClass">{t('contact_class')}</label>
               <select 
                 id="questClass" 
                 name="questClass" 
                 value={formData.questClass} 
                 onChange={handleChange}
               >
-                <option value="video-editing">Video Editing</option>
-                <option value="vfx">VFX & Magic</option>
-                <option value="motion-graphics">Motion Graphics</option>
-                <option value="other">Other Magic</option>
+                <option value="video-editing">{language === 'id' ? 'Video Editing' : 'Video Editing'}</option>
+                <option value="vfx">{language === 'id' ? 'VFX & Sihir' : 'VFX & Magic'}</option>
+                <option value="motion-graphics">{language === 'id' ? 'Motion Graphics' : 'Motion Graphics'}</option>
+                <option value="other">{language === 'id' ? 'Sihir Lainnya' : 'Other Magic'}</option>
               </select>
             </div>
 
             <div className="form-group">
-              <label htmlFor="budget">Budget (Gold Coins)</label>
+              <label htmlFor="budget">{t('contact_budget')}</label>
               <input 
                 type="text" 
                 id="budget" 
                 name="budget" 
-                placeholder="E.g., 500G or $500" 
+                placeholder={t('contact_budget_ph')} 
                 value={formData.budget} 
                 onChange={handleChange} 
               />
@@ -96,12 +98,12 @@ const ContactSection = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="details">Quest Details</label>
+            <label htmlFor="details">{t('contact_details')}</label>
             <textarea 
               id="details" 
               name="details" 
               rows={4} 
-              placeholder="Describe the monster you need me to slay (project details)..." 
+              placeholder={t('contact_details_ph')} 
               value={formData.details} 
               onChange={handleChange} 
               required 
@@ -109,7 +111,7 @@ const ContactSection = () => {
           </div>
 
           <button type="submit" className="submit-quest-btn">
-            Send to Guild
+            {t('contact_btn')}
           </button>
         </form>
       </motion.div>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlay, FaTimes } from 'react-icons/fa';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import { getPortfolioItems } from '../../../translations/data';
 import './PortfolioGrid.css';
 
 type Project = {
@@ -10,16 +12,7 @@ type Project = {
   description: string;
 };
 
-const portfolioItems: Project[] = [
-  { id: 1, title: "Dragon's Breath Intro", category: "Isekai Character", description: "A fiery, magical intro sequence fit for a dragon tamer." },
-  { id: 2, title: "YouTube Intro Clip", category: "YouTube Intro", description: "High-energy 8-bit style intro for gaming streams." },
-  { id: 3, title: "Commercial Spot", category: "YouTube Intro", description: "A cinematic teaser for a new fantasy game release." },
-  { id: 4, title: "Magic Duel VFX", category: "VFX & Magic", description: "Added spell-casting effects and glowing auras to a live-action duel." },
-  { id: 5, title: "Tavern Ambience", category: "Motion Graphics", description: "Looping tavern background with animated fire and patrons." },
-  { id: 6, title: "Guild Recruitment", category: "Commercial", description: "Fast-paced montage to recruit new members to the guild." },
-  { id: 7, title: "Level Up Animation", category: "Motion Graphics", description: "Custom level-up screen with particle explosions." },
-  { id: 8, title: "Boss Fight Montage", category: "YouTube Intro", description: "Synced edits to an epic boss fight soundtrack." },
-];
+// Data moved to translations/data.ts
 
 const VideoCard = ({ item, onClick }: { item: Project; onClick: () => void }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -54,6 +47,8 @@ const VideoCard = ({ item, onClick }: { item: Project; onClick: () => void }) =>
 const PortfolioGrid = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const { t, language } = useLanguage();
+  const portfolioItems = getPortfolioItems(language);
 
   // Prevent scrolling on body when modal is open
   useEffect(() => {
@@ -74,7 +69,7 @@ const PortfolioGrid = () => {
 
   return (
     <section id="portfolio" className="portfolio-section">
-      <h2 className="section-title">Portfolio Grimoire</h2>
+      <h2 className="section-title glitched">{t('portfolio_title')}</h2>
       <div className={`portfolio-grid ${!isExpanded ? 'mobile-collapsed' : 'mobile-expanded'}`}>
         {portfolioItems.map((item) => (
           <VideoCard key={item.id} item={item} onClick={() => openModal(item)} />
@@ -84,11 +79,11 @@ const PortfolioGrid = () => {
       <div className="show-more-container">
         {!isExpanded ? (
           <button className="show-more-btn" onClick={() => setIsExpanded(true)}>
-            Unveil All Quests
+            {t('portfolio_btn_show')}
           </button>
         ) : (
           <button className="show-more-btn hide-btn" onClick={() => setIsExpanded(false)}>
-            Hide Quests
+            {t('portfolio_btn_hide')}
           </button>
         )}
       </div>

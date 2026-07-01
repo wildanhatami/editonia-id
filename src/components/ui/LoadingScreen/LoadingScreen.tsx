@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { playClickSound } from '../../../utils/audio';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import './LoadingScreen.css';
 
 const LoadingScreen = ({ onEnter }: { onEnter: () => void }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Simulate loading time
@@ -37,7 +39,7 @@ const LoadingScreen = ({ onEnter }: { onEnter: () => void }) => {
           <div className="loading-content">
             {!isLoaded ? (
               <div className="loading-phase">
-                <h1 className="loading-text">NOW LOADING...</h1>
+                <h1 className="loading-text">{t('load_entering')}</h1>
                 <div className="loading-bar-container">
                   <motion.div 
                     className="loading-bar-fill"
@@ -50,7 +52,7 @@ const LoadingScreen = ({ onEnter }: { onEnter: () => void }) => {
             ) : (
               <div className="start-phase">
                 <button className="press-start-btn" onClick={handleStart}>
-                  PRESS START TO ENTER REALM
+                  {t('load_enter')}
                 </button>
               </div>
             )}

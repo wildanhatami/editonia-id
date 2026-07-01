@@ -1,6 +1,6 @@
 .pricelist-section {
   width: 100%;
-  padding: 40px 0;
+  padding: 10px 0;
 }
 
 .pricelist-grid {
@@ -8,16 +8,17 @@
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .pricing-card {
   flex: 1 1 300px;
   max-width: 350px;
-  padding: 40px 30px;
+  padding: 30px 20px 20px 20px;
   text-align: center;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
+  height: fit-content;
 }
 
 .pricing-card:hover {
@@ -68,7 +69,7 @@
 .tier-features {
   list-style: none;
   padding: 0;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .tier-features li {
@@ -101,7 +102,7 @@
 
 @media (max-width: 768px) {
   .pricelist-section {
-    padding: 20px 0;
+    padding: 10px 0;
   }
   .pricelist-grid {
     flex-direction: row;
@@ -110,7 +111,7 @@
     scroll-snap-type: x mandatory;
     padding: 0 20px 20px 20px;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: flex-start;
   }
   .pricing-card {
     flex: 0 0 280px;

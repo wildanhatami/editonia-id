@@ -1,12 +1,12 @@
 .testimonials-section {
   width: 100%;
-  padding: 40px 20px;
+  padding: 10px 20px;
   text-align: center;
 }
 
 .testimonials-section .section-subtitle {
   color: #ccc;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   font-size: 1.1rem;
 }
 
@@ -86,7 +86,7 @@
 
 @media (max-width: 768px) {
   .testimonials-section {
-    padding: 20px 0;
+    padding: 10px 0;
   }
   .testimonials-grid {
     flex-direction: row;

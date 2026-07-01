@@ -1,16 +1,18 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import { getSpells } from '../../../translations/data';
 import './SpellsSection.css';
 
-const spells = [
-  { id: 1, title: 'Mana Manipulation', subtitle: '(Color Grading)' },
-  { id: 2, title: 'Chronos Control', subtitle: '(Quick Cuts)' },
-  { id: 3, title: 'Reality Alteration', subtitle: '(VFX & Motion Graphics)' },
-];
+// Data moved to translations/data.ts
 
 const SpellsSection = () => {
+  const { t, language } = useLanguage();
+  const spells = getSpells(language);
+
   return (
     <section id="spells" className="spells-section">
-      <h2 className="section-title">SPELLS (Services)</h2>
+      <h2 className="section-title glitched">{t('spells_title')}</h2>
+      <p className="section-subtitle">{t('spells_subtitle')}</p>
       <div className="spells-grid">
         {spells.map((spell, index) => (
           <motion.div

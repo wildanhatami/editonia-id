@@ -1,8 +1,10 @@
 import logoImg from '../../../assets/logo.png';
 import userIconImg from '../../../assets/icon-user.png';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import './Footer.css';
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="footer-section">
       <div className="footer-content">
@@ -14,10 +16,10 @@ const Footer = () => {
         <div className="footer-actions">
           <a href="#top" className="footer-link">
             <img src={userIconImg} alt="Wizard Profile" className="cat-icon-small" />
-            Back to Top
+            {t('footer_top')}
           </a>
-          <a href="#contact" className="footer-link contact-link">
-            Contact Us
+          <a href="https://wa.me/6289650866388" target="_blank" rel="noopener noreferrer" className="footer-link contact-link">
+            {t('footer_contact')}
           </a>
         </div>
       </div>

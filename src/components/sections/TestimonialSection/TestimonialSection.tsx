@@ -1,35 +1,18 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import { getTestimonials } from '../../../translations/data';
 import './TestimonialSection.css';
 
-const testimonials = [
-  {
-    id: 1,
-    name: 'Arthur Pendragon',
-    role: 'Guild Master',
-    rating: 5,
-    text: '"The visual effects added to my quest logs were nothing short of legendary. Truly magical video editing!"'
-  },
-  {
-    id: 2,
-    name: 'Elara Moonwhisper',
-    role: 'Elf Ranger',
-    rating: 5,
-    text: '"Fast delivery and crisp cuts! The pacing of my archery montage was perfect. Highly recommended to any adventurer."'
-  },
-  {
-    id: 3,
-    name: 'Kaelen',
-    role: 'Rogue Streamer',
-    rating: 5,
-    text: '"Editonia brought my stream highlights to life! The motion graphics are top-tier and the transitions are seamless."'
-  }
-];
+// Data moved to translations/data.ts
 
 const TestimonialSection = () => {
+  const { t, language } = useLanguage();
+  const testimonials = getTestimonials(language);
+
   return (
     <section className="testimonials-section">
-      <h2 className="section-title">Tavern Whispers</h2>
-      <p className="section-subtitle">What other adventurers say about our magic</p>
+      <h2 className="section-title glitched">{t('testi_title')}</h2>
+      <p className="section-subtitle">{t('testi_subtitle')}</p>
       
       <div className="testimonials-grid">
         {testimonials.map((testimonial, index) => (

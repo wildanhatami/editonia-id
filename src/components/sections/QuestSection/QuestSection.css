@@ -1,12 +1,12 @@
 .quests-section {
   width: 100%;
-  padding: 40px 20px;
+  padding: 20px;
   text-align: center;
 }
 
 .quests-section .section-subtitle {
   color: #ccc;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   font-size: 1.1rem;
 }
 
@@ -85,7 +85,7 @@
 
 @media (max-width: 768px) {
   .quests-section {
-    padding: 20px 0;
+    padding: 10px 0;
   }
   .quests-grid {
     flex-direction: row;

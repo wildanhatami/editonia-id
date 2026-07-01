@@ -10,7 +10,6 @@ import PricelistSection from './components/sections/PricelistSection/PricelistSe
 import QuestSection from './components/sections/QuestSection/QuestSection';
 import FaqSection from './components/sections/FaqSection/FaqSection';
 import Footer from './components/layout/Footer/Footer';
-import Background from './components/layout/Background/Background';
 import LoadingScreen from './components/ui/LoadingScreen/LoadingScreen';
 import './App.css';
 
@@ -29,8 +28,6 @@ function App() {
   return (
     <div className="app-container" id="top">
       {!hasEntered && <LoadingScreen onEnter={() => setHasEntered(true)} />}
-      
-      <Background />
       
       <div className="content-wrapper">
         <Navbar />

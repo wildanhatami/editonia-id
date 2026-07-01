@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaScroll, FaMagic, FaSearch, FaTrophy } from 'react-icons/fa';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import './QuestSection.css';
 
 const quests = [
@@ -34,10 +35,12 @@ const quests = [
 ];
 
 const QuestSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="quests" className="quests-section">
-      <h2 className="section-title">Quest Board</h2>
-      <p className="section-subtitle">How to summon our editing powers</p>
+      <h2 className="section-title">{t('quest_title')}</h2>
+      <p className="section-subtitle">{t('quest_subtitle')}</p>
       
       <div className="quests-grid">
         {quests.map((quest, index) => (
@@ -51,9 +54,9 @@ const QuestSection = () => {
           >
             <div className="quest-number">{quest.id}</div>
             <div className="quest-icon">{quest.icon}</div>
-            <h3 className="quest-title">{quest.title}</h3>
-            <span className="quest-subtitle">{quest.subtitle}</span>
-            <p className="quest-desc">{quest.desc}</p>
+            <h3 className="quest-title">{t(`quest_${quest.id}_title` as any)}</h3>
+            <span className="quest-subtitle">{t(`quest_${quest.id}_sub` as any)}</span>
+            <p className="quest-desc">{t(`quest_${quest.id}_desc` as any)}</p>
           </motion.div>
         ))}
       </div>

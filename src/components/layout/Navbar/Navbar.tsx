@@ -3,9 +3,11 @@ import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logoImg from '../../../assets/logo.png';
 import userIconImg from '../../../assets/icon-user.png';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import './Navbar.css';
 
 const Navbar = () => {
+  const { language, setLanguage, t } = useLanguage();
   const [isHoveringCat, setIsHoveringCat] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -28,25 +30,32 @@ const Navbar = () => {
       <div className="nav-actions">
         <div className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           <a href="#portfolio" className="nav-link" onClick={closeMobileMenu}>
-            <span className="nav-link-title">PORTFOLIO</span>
+            <span className="nav-link-title">{t('nav_portfolio')}</span>
           </a>
           <a href="#spells" className="nav-link" onClick={closeMobileMenu}>
-            <span className="nav-link-title">SPELLS</span>
-            <span className="nav-link-sub">(Services)</span>
+            <span className="nav-link-title">{t('nav_spells')}</span>
+            <span className="nav-link-sub">{t('nav_spells_sub')}</span>
           </a>
           <a href="#pricelist" className="nav-link" onClick={closeMobileMenu}>
-            <span className="nav-link-title">PRICELIST</span>
-            <span className="nav-link-sub">(Tiers)</span>
+            <span className="nav-link-title">{t('nav_pricelist')}</span>
+            <span className="nav-link-sub">{t('nav_pricelist_sub')}</span>
           </a>
           <a href="#quests" className="nav-link" onClick={closeMobileMenu}>
-            <span className="nav-link-title">QUESTS</span>
-            <span className="nav-link-sub">(About)</span>
+            <span className="nav-link-title">{t('nav_quests')}</span>
+            <span className="nav-link-sub">{t('nav_quests_sub')}</span>
           </a>
           <a href="https://wa.me/6289650866388" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={closeMobileMenu}>
-            <span className="nav-link-title">SUMMON US</span>
-            <span className="nav-link-sub">(Contact)</span>
+            <span className="nav-link-title">{t('nav_summon')}</span>
+            <span className="nav-link-sub">{t('nav_summon_sub')}</span>
           </a>
         </div>
+
+        <button 
+          className="lang-toggle-btn" 
+          onClick={() => setLanguage(language === 'en' ? 'id' : 'en')}
+        >
+          {language === 'en' ? 'ID' : 'EN'}
+        </button>
 
         <button 
           className="mobile-menu-btn" 
@@ -79,7 +88,7 @@ const Navbar = () => {
             </motion.div>
           )}
         </div>
-        <div className="wizard-label">WIZARD PROFILE</div>
+        <div className="wizard-label">{t('nav_profile')}</div>
       </div>
     </nav>
     </>
