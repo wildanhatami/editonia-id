@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { playClickSound } from '../utils/audio';
+import { playClickSound } from '../../../utils/audio';
 import './FaqSection.css';
 
 const faqs = [

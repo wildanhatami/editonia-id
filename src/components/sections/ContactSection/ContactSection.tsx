@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { playClickSound } from '../utils/audio';
+import { playClickSound } from '../../../utils/audio';
 import './ContactSection.css';
 
 const ContactSection = () => {

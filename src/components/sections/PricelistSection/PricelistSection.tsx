@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { playClickSound } from '../utils/audio';
+import { playClickSound } from '../../../utils/audio';
 import './PricelistSection.css';
 
 const pricingTiers = [

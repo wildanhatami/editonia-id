@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import HeroStatsSection from './components/HeroStatsSection';
-import PortfolioGrid from './components/PortfolioGrid';
-import SpellsSection from './components/SpellsSection';
-import SkillTreeSection from './components/SkillTreeSection';
-import TestimonialSection from './components/TestimonialSection';
-import PricelistSection from './components/PricelistSection';
-import QuestSection from './components/QuestSection';
-import FaqSection from './components/FaqSection';
-import Footer from './components/Footer';
-import Background from './components/Background';
-import LoadingScreen from './components/LoadingScreen';
+import Navbar from './components/layout/Navbar/Navbar';
+import HeroSection from './components/sections/HeroSection/HeroSection';
+import HeroStatsSection from './components/sections/HeroStatsSection/HeroStatsSection';
+import PortfolioGrid from './components/sections/PortfolioGrid/PortfolioGrid';
+import SpellsSection from './components/sections/SpellsSection/SpellsSection';
+import SkillTreeSection from './components/sections/SkillTreeSection/SkillTreeSection';
+import TestimonialSection from './components/sections/TestimonialSection/TestimonialSection';
+import PricelistSection from './components/sections/PricelistSection/PricelistSection';
+import QuestSection from './components/sections/QuestSection/QuestSection';
+import FaqSection from './components/sections/FaqSection/FaqSection';
+import Footer from './components/layout/Footer/Footer';
+import Background from './components/layout/Background/Background';
+import LoadingScreen from './components/ui/LoadingScreen/LoadingScreen';
 import './App.css';
 
 function App() {

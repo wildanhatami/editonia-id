@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logoImg from '../assets/logo.png';
-import userIconImg from '../assets/icon-user.png';
+import logoImg from '../../../assets/logo.png';
+import userIconImg from '../../../assets/icon-user.png';
 import './Navbar.css';
 
 const Navbar = () => {

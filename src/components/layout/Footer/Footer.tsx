@@ -1,5 +1,5 @@
-import logoImg from '../assets/logo.png';
-import userIconImg from '../assets/icon-user.png';
+import logoImg from '../../../assets/logo.png';
+import userIconImg from '../../../assets/icon-user.png';
 import './Footer.css';
 
 const Footer = () => {
