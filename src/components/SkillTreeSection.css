@@ -1,6 +1,6 @@
 .skilltree-section {
   width: 100%;
-  padding: 80px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -91,4 +91,28 @@
   font-size: 0.8rem;
   color: #ccc;
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .skilltree-section {
+    padding: 20px 0;
+  }
+  .skill-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 20px 20px 20px;
+    gap: 15px;
+  }
+  .skill-card {
+    flex: 0 0 250px;
+    scroll-snap-align: center;
+    padding: 15px;
+  }
+  .skill-name {
+    font-size: 1.1rem;
+  }
+  .skill-level {
+    font-size: 0.8rem;
+  }
 }

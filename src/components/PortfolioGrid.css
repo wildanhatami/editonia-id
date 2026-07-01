@@ -221,6 +221,10 @@
   color: #ccc;
 }
 
+.show-more-container {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .portfolio-section {
     padding: 20px 10px;
@@ -230,6 +234,58 @@
     text-align: center;
   }
   .portfolio-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .portfolio-grid.mobile-collapsed {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .portfolio-grid.mobile-collapsed .video-card:nth-child(n+4) {
+    display: none;
+  }
+  .show-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .show-more-btn {
+    background: rgba(20, 5, 40, 0.8);
+    color: var(--neon-cyan);
+    padding: 10px 25px;
+    border: 2px solid var(--neon-cyan);
+    border-radius: 8px;
+    font-family: var(--font-pixel);
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+    transition: all 0.3s;
+  }
+  .show-more-btn:active {
+    transform: scale(0.95);
+  }
+  .video-card {
+    padding: 5px;
+  }
+  .video-thumbnail {
+    height: 90px;
+  }
+  .card-title {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-category {
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .play-button-container {
+    width: 30px;
+    height: 25px;
+  }
+  .play-icon {
+    font-size: 0.7rem;
   }
 }

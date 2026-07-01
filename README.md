@@ -1,32 +1,64 @@
-# React + TypeScript + Vite
+# Editonia ID
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Editonia ID** is a professional video editing service platform presented with a unique, interactive *Isekai/RPG game* theme. This website serves as a creative portfolio and a direct gateway for clients ("adventurers") to order video editing services ("quests").
 
-Currently, two official plugins are available:
+## 🎮 The Concept
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Instead of a traditional portfolio, Editonia ID gamifies the experience of ordering a video editing service:
+- **Spells**: The different video editing services offered.
+- **Skill Tree**: The software and tools mastered by the editor.
+- **Quests & Guilds**: Client projects and satisfied customers.
+- **Summon Us**: Direct connection to WhatsApp to easily start a project.
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Immersive UI/UX**: Custom cursor, interactive background, and a dedicated loading screen.
+- **Engaging Sections**: 
+  - Hero & Stats
+  - Portfolio Grid
+  - Spells (Services) & Skill Tree (Tools)
+  - Testimonials & Pricing (Tiers)
+  - FAQ
+- **Direct Order**: Seamless integration to WhatsApp (`wa.me`) for fast and easy booking.
+- **Animations**: Fluid and dynamic animations using Framer Motion.
 
-## Expanding the Oxlint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **Framework**: [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Styling**: Vanilla CSS
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## 📦 Installation for Development
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd editonia-id
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## 💻 Running the App
+
+To start the development server:
+
+```bash
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open [http://localhost:5173](http://localhost:5173) to view the app in your browser.
+
+## 🏗️ Build
+
+To build the app for production:
+
+```bash
+npm run build
+```

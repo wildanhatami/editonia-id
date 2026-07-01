@@ -1,69 +1,18 @@
-import { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import logoImg from '../assets/logo.png';
 import userIconImg from '../assets/icon-user.png';
-import bgmFile from '../assets/bgm.mp3';
-import { playClickSound, playAchievementSound } from '../utils/audio';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isHoveringCat, setIsHoveringCat] = useState(false);
-  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
-  const [showAchievement, setShowAchievement] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMusic = () => {
-    playClickSound();
-    if (audioRef.current) {
-      if (isMusicPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsMusicPlaying(!isMusicPlaying);
-    }
-  };
-
-  const handleProfileClick = () => {
-    if (showAchievement) return;
-    const newCount = clickCount + 1;
-    setClickCount(newCount);
-    
-    if (newCount === 5) {
-      playAchievementSound();
-      setShowAchievement(true);
-      // Hide achievement after 5 seconds
-      setTimeout(() => {
-        setShowAchievement(false);
-        setClickCount(0); // Reset for replayability
-      }, 5000);
-    } else {
-      playClickSound(); // Normal click sound
-    }
-  };
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <>
-      {/* Easter Egg Achievement Banner */}
-      <AnimatePresence>
-        {showAchievement && (
-          <motion.div 
-            className="achievement-banner glass"
-            initial={{ x: "-50%", y: -100, opacity: 0 }}
-            animate={{ x: "-50%", y: 20, opacity: 1 }}
-            exit={{ x: "-50%", y: -100, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          >
-            <div className="achievement-icon">🏆</div>
-            <div className="achievement-text">
-              <h4>Achievement Unlocked!</h4>
-              <p>The Curious Adventurer</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <nav className="navbar">
       <div className="logo-container">
         <motion.div 
@@ -77,38 +26,40 @@ const Navbar = () => {
       </div>
 
       <div className="nav-actions">
-        <button className="music-toggle-btn" onClick={toggleMusic} title="Toggle BGM">
-          {isMusicPlaying ? '🔊' : '🔇'}
-        </button>
-
-        <div className="nav-links">
-          <a href="#portfolio" className="nav-link">
+        <div className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <a href="#portfolio" className="nav-link" onClick={closeMobileMenu}>
             <span className="nav-link-title">PORTFOLIO</span>
           </a>
-          <a href="#spells" className="nav-link">
+          <a href="#spells" className="nav-link" onClick={closeMobileMenu}>
             <span className="nav-link-title">SPELLS</span>
             <span className="nav-link-sub">(Services)</span>
           </a>
-          <a href="#pricelist" className="nav-link">
+          <a href="#pricelist" className="nav-link" onClick={closeMobileMenu}>
             <span className="nav-link-title">PRICELIST</span>
             <span className="nav-link-sub">(Tiers)</span>
           </a>
-          <a href="#quests" className="nav-link">
+          <a href="#quests" className="nav-link" onClick={closeMobileMenu}>
             <span className="nav-link-title">QUESTS</span>
             <span className="nav-link-sub">(About)</span>
           </a>
-          <a href="#summon" className="nav-link">
+          <a href="https://wa.me/6289650866388" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={closeMobileMenu}>
             <span className="nav-link-title">SUMMON US</span>
             <span className="nav-link-sub">(Contact)</span>
           </a>
         </div>
+
+        <button 
+          className="mobile-menu-btn" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
 
       <div 
         className="user-profile"
         onMouseEnter={() => setIsHoveringCat(true)}
         onMouseLeave={() => setIsHoveringCat(false)}
-        onClick={handleProfileClick}
         style={{ cursor: 'pointer' }}
       >
         <div className="cat-icon-container">
@@ -130,9 +81,6 @@ const Navbar = () => {
         </div>
         <div className="wizard-label">WIZARD PROFILE</div>
       </div>
-
-      {/* Hidden audio element for background music */}
-      <audio ref={audioRef} src={bgmFile} loop />
     </nav>
     </>
   );

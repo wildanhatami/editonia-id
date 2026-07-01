@@ -1,6 +1,6 @@
 .pricelist-section {
   width: 100%;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .pricelist-grid {
@@ -100,10 +100,36 @@
 }
 
 @media (max-width: 768px) {
+  .pricelist-section {
+    padding: 20px 0;
+  }
+  .pricelist-grid {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 20px 20px 20px;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .pricing-card {
+    flex: 0 0 280px;
+    scroll-snap-align: center;
+    padding: 25px 20px;
+  }
+  .tier-name {
+    font-size: 1.3rem;
+  }
+  .tier-price {
+    font-size: 2rem;
+  }
+  .tier-features li {
+    font-size: 0.9rem;
+  }
   .highlighted-card {
     transform: scale(1);
   }
   .highlighted-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1);
   }
 }

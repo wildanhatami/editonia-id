@@ -20,7 +20,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  cursor: none; /* We will use a custom cursor */
 }
 
 body {
@@ -87,8 +86,4 @@ button {
   background: var(--neon-pink);
 }
 
-@media (pointer: coarse), (max-width: 768px) {
-  * {
-    cursor: auto !important;
-  }
-}
+

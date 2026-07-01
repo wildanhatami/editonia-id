@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlay, FaTimes } from 'react-icons/fa';
-import { playClickSound } from '../utils/audio';
 import './PortfolioGrid.css';
 
 type Project = {
@@ -54,6 +53,7 @@ const VideoCard = ({ item, onClick }: { item: Project; onClick: () => void }) =>
 
 const PortfolioGrid = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   // Prevent scrolling on body when modal is open
   useEffect(() => {
@@ -65,22 +65,32 @@ const PortfolioGrid = () => {
   }, [selectedProject]);
 
   const openModal = (project: Project) => {
-    playClickSound();
     setSelectedProject(project);
   };
 
   const closeModal = () => {
-    playClickSound();
     setSelectedProject(null);
   };
 
   return (
     <section id="portfolio" className="portfolio-section">
       <h2 className="section-title">Portfolio Grimoire</h2>
-      <div className="portfolio-grid">
+      <div className={`portfolio-grid ${!isExpanded ? 'mobile-collapsed' : 'mobile-expanded'}`}>
         {portfolioItems.map((item) => (
           <VideoCard key={item.id} item={item} onClick={() => openModal(item)} />
         ))}
+      </div>
+
+      <div className="show-more-container">
+        {!isExpanded ? (
+          <button className="show-more-btn" onClick={() => setIsExpanded(true)}>
+            Unveil All Quests
+          </button>
+        ) : (
+          <button className="show-more-btn hide-btn" onClick={() => setIsExpanded(false)}>
+            Hide Quests
+          </button>
+        )}
       </div>
 
       <AnimatePresence>

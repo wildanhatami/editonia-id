@@ -15,7 +15,7 @@ const Cursor = () => {
   useEffect(() => {
     const updateMousePos = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
-      
+
       // Add a new trail particle
       setTrail((prev) => [
         ...prev.slice(-10), // Keep max 10 particles
@@ -29,7 +29,7 @@ const Cursor = () => {
 
   return (
     <>
-      <div 
+      <div
         className="custom-cursor"
         style={{ left: `${mousePos.x}px`, top: `${mousePos.y}px` }}
       />

@@ -1,0 +1,104 @@
+.quests-section {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.quests-section .section-subtitle {
+  color: #ccc;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.quests-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quest-card {
+  flex: 1 1 250px;
+  max-width: 280px;
+  background: rgba(20, 5, 40, 0.6);
+  border: 1px solid var(--neon-purple);
+  padding: 30px 20px;
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quest-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 10px 20px rgba(34, 211, 238, 0.2);
+}
+
+.quest-number {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 40px;
+  height: 40px;
+  background: var(--neon-purple);
+  color: white;
+  border: 2px solid var(--neon-cyan);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-pixel);
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px var(--neon-purple);
+}
+
+.quest-icon {
+  font-size: 2.5rem;
+  color: var(--neon-pink);
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px var(--neon-pink));
+}
+
+.quest-title {
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.quest-subtitle {
+  font-size: 0.9rem;
+  color: var(--neon-cyan);
+  margin-bottom: 15px;
+  font-family: var(--font-pixel);
+}
+
+.quest-desc {
+  font-size: 0.95rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .quests-section {
+    padding: 20px 0;
+  }
+  .quests-grid {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 20px 20px 20px; /* added top padding for the absolute numbers */
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .quest-card {
+    flex: 0 0 250px;
+    scroll-snap-align: center;
+    padding: 20px 15px;
+  }
+}

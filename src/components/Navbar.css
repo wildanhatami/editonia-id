@@ -141,6 +141,20 @@
   text-align: center;
 }
 
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--neon-cyan);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.9);
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: row;
@@ -151,11 +165,33 @@
   }
 
   .nav-links {
-    display: none; /* Sembunyikan menu teks di HP */
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 5, 40, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    border-bottom: 2px solid var(--neon-cyan);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    z-index: 1000;
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+    gap: 20px;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    margin-right: 15px;
   }
 
   .nav-actions {
-    gap: 15px; /* Jarak antara tombol musik dan profil */
+    display: flex;
+    align-items: center;
   }
 
   .crystal-logo-img {

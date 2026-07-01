@@ -34,13 +34,16 @@ const HeroSection = () => {
           Professional Video Editing with an Isekai Twist.
         </p>
 
-        <motion.button 
+        <motion.a 
+          href="https://wa.me/6289650866388"
+          target="_blank"
+          rel="noopener noreferrer"
           className="quest-btn"
+          style={{ textDecoration: 'none', display: 'inline-block' }}
           onMouseEnter={() => setIsCharging(true)}
           onMouseLeave={() => setIsCharging(false)}
           onClick={() => {
             playClickSound();
-            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
           }}
           whileTap={{ scale: 0.95 }}
         >
@@ -52,7 +55,7 @@ const HeroSection = () => {
             animate={{ width: isCharging ? '100%' : '0%' }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           />
-        </motion.button>
+        </motion.a>
       </motion.div>
     </section>
   );

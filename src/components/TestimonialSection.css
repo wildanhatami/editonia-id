@@ -1,6 +1,6 @@
 .testimonials-section {
   width: 100%;
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -85,8 +85,24 @@
 }
 
 @media (max-width: 768px) {
+  .testimonials-section {
+    padding: 20px 0;
+  }
   .testimonials-grid {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 20px 20px 20px;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .testimonial-card {
+    flex: 0 0 280px;
+    scroll-snap-align: center;
+    padding: 20px;
+  }
+  .testimonial-text {
+    font-size: 0.9rem;
   }
 }

@@ -24,8 +24,11 @@
   box-shadow: 0 0 8px var(--neon-cyan), 0 0 12px var(--neon-pink);
 }
 
-@media (pointer: coarse), (max-width: 768px) {
-  .custom-cursor, .mana-dust {
+@media (pointer: coarse),
+(max-width: 768px) {
+
+  .custom-cursor,
+  .mana-dust {
     display: none !important;
   }
 }

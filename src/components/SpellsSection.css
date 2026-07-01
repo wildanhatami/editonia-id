@@ -1,7 +1,7 @@
 .spells-section {
   width: 100%;
   padding: 40px 0;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .spells-grid {
@@ -36,12 +36,28 @@
 
 @media (max-width: 768px) {
   .spells-section {
-    padding: 20px 10px;
+    padding: 20px 0px;
   }
   .section-title {
     text-align: center;
   }
+  .spells-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 20px 15px 20px;
+    justify-content: flex-start;
+  }
   .spell-card {
-    max-width: 100%;
+    flex: 0 0 200px;
+    scroll-snap-align: center;
+    padding: 15px 10px;
+    max-width: none;
+  }
+  .spell-title {
+    font-size: 1.1rem;
+  }
+  .spell-subtitle {
+    font-size: 0.8rem;
   }
 }
